@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace & Glory - Moda Evangélica de Luxo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Grace & Glory</h1>
+                </div>
+                
+                <nav class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="#home">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#collections">Coleções <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#spring">Primavera</a></li>
+                                <li><a href="#evening">Eventos</a></li>
+                                <li><a href="#daily">Dia a Dia</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#products">Produtos</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-icons">
+                    <a href="#search"><i class="fas fa-search"></i></a>
+                    <a href="#account"><i class="fas fa-user"></i></a>
+                    <a href="#cart" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">3</span>
+                    </a>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <h2>Menu</h2>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="#home">Home</a></li>
+            <li class="mobile-dropdown">
+                <a href="#collections">Coleções <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-submenu">
+                    <li><a href="#spring">Primavera</a></li>
+                    <li><a href="#evening">Eventos</a></li>
+                    <li><a href="#daily">Dia a Dia</a></li>
+                </ul>
+            </li>
+            <li><a href="#products">Produtos</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2 class="hero-title">Elegância Atemporal</h2>
+            <p class="hero-subtitle">Descubra a moda luxuosa que honra seus valores e celebra seu estilo</p>
+            <button class="btn btn-primary">Explorar Coleção</button>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="featured-collections" id="collections">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Coleções em Destaque</h2>
+                <p class="section-subtitle">Peças cuidadosamente selecionadas que unem modéstia e luxo moderno</p>
+            </div>
+            
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="collection-image" style="background-image: url('https://placehold.co/600x400/f8f5f0/8b7355?text=Elegância+Primavera')">
+                        <div class="collection-overlay">
+                            <h3>Elegância Primavera</h3>
+                            <p>Pecas atemporais para a mulher moderna</p>
+                            <button class="btn btn-outline">Explorar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-image" style="background-image: url('https://placehold.co/600x400/f8f5f0/8b7355?text=Graça+Noturna')">
+                        <div class="collection-overlay">
+                            <h3>Graça Noturna</h3>
+                            <p>Estilos sofisticados para ocasiões especiais</p>
+                            <button class="btn btn-outline">Explorar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossa Coleção</h2>
+                <div class="products-controls">
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-category="all">Todos</button>
+                        <button class="filter-btn" data-category="dresses">Vestidos</button>
+                        <button class="filter-btn" data-category="skirts">Saias</button>
+                        <button class="filter-btn" data-category="blouses">Blusas</button>
+                        <button class="filter-btn" data-category="outerwear">Casacos</button>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="dresses">
+                    <div class="product-image">
+                        <img src="https://placehold.co/400x500/f8f5f0/8b7355?text=Vestido+Elegante" alt="Vestido Midi Elegante">
+                        <span class="sale-badge">Sale</span>
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Vestido Midi Elegante</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="reviews">(24)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 129,99</span>
+                            <span class="original-price">R$ 159,99</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color" style="background-color: #f5f5dc;"></span>
+                            <span class="color" style="background-color: #000080;"></span>
+                            <span class="color" style="background-color: #f4c2c2;"></span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card" data-category="blouses">
+                    <div class="product-image">
+                        <img src="https://placehold.co/400x500/f8f5f0/8b7355?text=Conjunto+Luxuoso" alt="Conjunto de Blusa Luxuosa">
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto de Blusa Luxuosa</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="reviews">(18)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 89,99</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color" style="background-color: #ffffff;"></span>
+                            <span class="color" style="background-color: #fdf5e6;"></span>
+                            <span class="color" style="background-color: #f4c2c2;"></span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card" data-category="skirts">
+                    <div class="product-image">
+                        <img src="https://placehold.co/400x500/f8f5f0/8b7355?text=Coleção+Modesta" alt="Coleção de Saia Modesta">
+                        <span class="sale-badge">Sale</span>
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Coleção de Saia Modesta</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="reviews">(32)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 79,99</span>
+                            <span class="original-price">R$ 99,99</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color" style="background-color: #000080;"></span>
+                            <span class="color" style="background-color: #000000;"></span>
+                            <span class="color" style="background-color: #808000;"></span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card" data-category="outerwear">
+                    <div class="product-image">
+                        <img src="https://placehold.co/400x500/f8f5f0/8b7355?text=Cardigan+Elegante" alt="Cardigan Elegante">
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cardigan Elegante</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="reviews">(15)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 99,99</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color" style="background-color: #f5f5dc;"></span>
+                            <span class="color" style="background-color: #2f4f4f;"></span>
+                            <span class="color" style="background-color: #f4c2c2;"></span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card" data-category="accessories">
+                    <div class="product-image">
+                        <img src="https://placehold.co/400x500/f8f5f0/8b7355?text=Acessórios+de+Pérola" alt="Conjunto de Acessórios de Pérola">
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Conjunto de Acessórios de Pérola</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="reviews">(28)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 49,99</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color" style="background-color: #f5f5f5;"></span>
+                            <span class="color" style="background-color: #ffd700;"></span>
+                            <span class="color" style="background-color: #c0c0c0;"></span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card" data-category="dresses">
+                    <div class="product-image">
+                        <img src="https://placehold.co/400x500/f8f5f0/8b7355?text=Vestido+Luxuoso" alt="Vestido Maxi Luxuoso">
+                        <button class="wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Vestido Maxi Luxuoso</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="reviews">(41)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">R$ 149,99</span>
+                        </div>
+                        <div class="product-colors">
+                            <span class="color" style="background-color: #000080;"></span>
+                            <span class="color" style="background-color: #800000;"></span>
+                            <span class="color" style="background-color: #f5f5dc;"></span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O Que Nossa Comunidade Diz</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Essas peças me fazem sentir confiante e bonita enquanto mantenho meus valores."</p>
+                    <p class="testimonial-author">— Sarah M.</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"A qualidade é excepcional e os estilos são exatamente o que eu procurava."</p>
+                    <p class="testimonial-author">— Rebecca T.</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Finalmente, uma marca que entende moda modesta com apelo de luxo."</p>
+                    <p class="testimonial-author">— Michelle R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story -->
+    <section class="brand-story" id="about">
+        <div class="container">
+            <div class="brand-story-content">
+                <h2 class="section-title">Nossa História</h2>
+                <p class="brand-story-text">
+                    Fundada na crença de que a moda modesta pode ser bonita e empoderadora, 
+                    Grace & Glory une elegância atemporal com design contemporâneo. 
+                    Cada peça é cuidadosamente criada para honrar os valores da mulher moderna 
+                    enquanto celebra seu estilo único e confiança.
+                </p>
+                <button class="btn btn-outline">Saiba Mais Sobre Nós</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="section-title">Junte-se à Nossa Comunidade</h2>
+                <p class="newsletter-subtitle">
+                    Inscreva-se para receber dicas de estilo, ofertas exclusivas 
+                    e inspiração para uma vida modesta
+                </p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Digite seu email" class="newsletter-input">
+                    <button class="btn btn-primary">Inscrever-se</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-logo">Grace & Glory</h3>
+                    <p class="footer-text">
+                        Moda luxuosa modesta para a mulher moderna que valoriza elegância e fé.
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Comprar</h4>
+                    <ul class="footer-links">
+                        <li><a href="#new">Novidades</a></li>
+                        <li><a href="#dresses">Vestidos</a></li>
+                        <li><a href="#blouses">Blusas</a></li>
+                        <li><a href="#skirts">Saias</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#story">Nossa História</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Suporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shipping">Informações de Envio</a></li>
+                        <li><a href="#returns">Devoluções</a></li>
+                        <li><a href="#size">Guia de Tamanhos</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Grace & Glory. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
