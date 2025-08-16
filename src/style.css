@@ -1,0 +1,245 @@
+:root {
+  /* Cores*/
+  --cor-principal: #74414b;
+  --cor-destaque: #b59d6f;
+  --cor-fundo: #d1d1d1;
+
+  /* Fontes*/
+  --fonte-titulos: "Playfair Display", serif;
+  --fonte-texto: "Lato", sans-serif;
+
+  /* Tamanhos de Fontes*/
+  --titulo-h1: 3rem;
+  --texto-p: 1rem;
+  --subtitulo-h2: 2.5rem;
+  --texto-cards-h3: 1.5rem;
+  --texto-legendas: 0.875rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  
+}
+
+body {
+  background-color: var(--cor-fundo);
+}
+
+/* Tipografia */
+h1 {
+  font-family: var(--fonte-titulos);
+}
+
+/* conteiner banner */
+.carousel-banner {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  width: 300%;
+  /* 100% para cada slide (ex: 3 slides = 300%) */
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  /* Animação de transição suave */
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+/* Estilo para os indicadores de navegação */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+
+/* conteudo dentro do carrosel */
+
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--cor-fundo);
+  width: 90%;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  mix-blend-mode: difference;
+}
+
+.carousel-content .carousel-title {
+  font-family: var(--fonte-titulos);
+  font-size: 3.5rem;
+  color: var(--cor-fundo);
+}
+
+.carrosel-subtitle {
+  width: 90%;
+  text-align: end;
+
+}
+
+.carousel-description {
+  font-family: var(--fonte-texto);
+  font-size: var(--subtitulo-h2);
+  color: var(--cor-fundo);
+  margin-bottom: 20px;
+}
+
+.carrosel-versiculo{
+  width: 90%;
+  text-align: end;
+}
+.versiculo{
+  font-family: var(--fonte-texto);
+  font-size: var(--texto-p);
+  color: var(--cor-fundo);
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+
+
+/* cabeçalho  */
+.menu {
+  width: 90%;
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cor-principal);
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 36px;
+}
+
+.menu .menu-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.menu .menu-list li {
+  margin: 0 15px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: var(--cor-destaque);
+  font-family: var(--fonte-texto);
+  font-size: 1.2rem;
+  font-weight: 600;
+
+}
+
+.menu ul li a:hover {
+  text-decoration: line-through;
+  text-decoration-color: var(--cor-fundo);
+  text-underline-offset: 0.5rem;
+  transition: all 0.5s ease;
+}
+
+.menu .logo {
+  font-family: var(--fonte-titulos);
+  font-size: 1.5rem;
+  color: var(--cor-fundo);
+}
+
+/* botão fale conosco */
+
+button {
+  display: flex;
+  padding: 1.1rem 2.5rem 1.1rem 3.5rem;
+  border-radius: 99rem;
+  background-color: var(--cor-fundo);
+  transition: all 0.5s ease;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  border: none;
+  font-size: 18px;
+  height: 0.5rem;
+  color: var(--cor-principal);
+}
+
+button .icon {
+  height: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-header .icon .efeito-btn {
+  background: var(--cor-fundo);
+  border-radius: 100%;
+  padding: 0rem;
+
+  width: 0rem;
+  height: 0rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(-180deg);
+
+  transition: all 0.5s ease;
+}
+
+button:hover .icon .efeito-btn {
+  transform: rotate(0deg);
+  background: var(--cor-principal);
+  border-radius: 100%;
+  padding: 0.6rem;
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+
+
+/* recomendacoes*/
+
+.recomendacoes {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
