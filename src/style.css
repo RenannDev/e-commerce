@@ -25,8 +25,6 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  
-  
 }
 
 body {
@@ -368,7 +366,7 @@ button:hover .icon .efeito-btn {
 }
 
 .lista-de-razoes {
-  width: 110%;
+  width: 115%;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 3fr;
@@ -403,7 +401,7 @@ button:hover .icon .efeito-btn {
   cursor: pointer;
   position: relative;
   padding-block: 20px;
-  border-bottom: 1.5px solid rgb(107, 106, 106);
+  border-bottom: 1.5px solid rgba(107, 106, 106, 0.195);
 }
 
 .lista-de-items > li img {
@@ -463,6 +461,17 @@ button:hover .icon .efeito-btn {
 
 }
 
+.caixa-imgs p{
+  
+  
+  font-family: var(--fonte-texto);
+  font-size: var(--texto-p);
+  color: var(--cor-principal);
+  text-align: center;
+  width: 100%;
+  z-index: 1000;
+}
+
 
 /* Tente um seletor mais específico se o seu CSS estiver em outro arquivo */
 .slide-img .caixa-imgs img.ativa {
@@ -470,6 +479,234 @@ button:hover .icon .efeito-btn {
 }
 
 
+
+/* Estilo da secao de destaques */
+
+
+
+/* Estilos da Seção */
+.colecao-destaque {
+    margin-top: 12.5rem;
+    padding-inline: 20px;
+    text-align: center;
+    margin-bottom: 26rem;
+    height: 100vh;
+}
+
+.colecao-destaque .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100vh;
+    
+}
+
+.colecao-destaque .titulo-secao h2 {
+    font-size: 3.1em;
+    color: var(--cor-principal, #333);
+    margin-bottom: 10px;
+    font-family: var(--fonte-titulos);
+}
+
+.colecao-destaque .titulo-secao p {
+    font-size: 1em;
+    color: var(--cor-texto, #666);
+    margin-bottom: 30px;
+    font-family: var(--fonte-texto);
+}
+
+/* O Layout de Grid com 5 Colunas */
+.colecao-destaque .galeria-destaque {
+  margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; 
+    /* Define 5 colunas de tamanho igual com nomes para cada área */
+    grid-template-areas: 
+        'texto-vestido imagem-central imagem-saia'
+        'imagem-vestido imagem-central texto-saia';
+    gap: 25px;
+    align-items: center;
+    height: 100%;
+    
+
+}
+
+/* Atribui cada div à sua área nomeada */
+.colecao-destaque .texto-vestido {
+    grid-area: texto-vestido;
+   width: 416px;
+    height: 277px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+    gap: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--cor-principal, #333);
+    
+    
+}
+.colecao-destaque .imagem-vestido {
+    grid-area: imagem-vestido;
+    width: 416px;
+    height: 277px;
+    background-image: url('../img/vestido.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+.colecao-destaque .imagem-central {
+    grid-area: imagem-central;
+    width: 100%;
+    height: 98%;
+    background-image: url('../img/mulher-sorrindo.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+.colecao-destaque .imagem-saia {
+    grid-area: imagem-saia;
+    width: 416px;
+    height: 277px;
+    background-image: url('../img/saia.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+
+}
+.colecao-destaque .texto-saia {
+    grid-area: texto-saia;
+    width: 416px;
+    height: 277px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: start;
+    text-align: start;
+    gap: 10px;
+    border-radius: 8px;
+    color: var(--cor-principal, #333);
+    background-color: rgba(255, 255, 255, 0)
+}
+
+/* Estilos comuns para todos os itens */
+.colecao-destaque .item-destaque {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Adicionado para centralizar conteúdo */
+    flex-direction: column;
+    justify-content: center;
+}
+
+.colecao-destaque .item-destaque img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+/* icones e textos*/
+
+.colecao-destaque .texto-vestido h3, .colecao-destaque .texto-saia h3{
+    font-size: 1.6rem;
+    color: #1f1d1d;
+    margin-block: 1rem;
+}
+
+.colecao-destaque .texto-vestido p, .colecao-destaque .texto-saia p{
+  font-family: var(--fonte-texto);
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.colecao-destaque .texto-vestido .icone-vestido, .colecao-destaque .item-destaque .icone-saia{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    filter: invert(0.2);
+   
+}
+
+
+/* Adaptação para telas menores */
+@media (max-width: 768px) {
+    .colecao-destaque .galeria-destaque {
+        /* Redesenha o layout para uma única coluna */
+        grid-template-areas: 
+            'texto-vestido'
+            'imagem-vestido'
+            'imagem-central'
+            'imagem-saia'
+            'texto-saia';
+    }
+}
+
+
+
+
+/* estilos para a secao nosssa historia */
+/* Estilos da Seção Principal */
+.nossa-historia {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+    height: 100vh;
+}
+
+/* Container que centraliza o conteúdo */
+.nossa-historia .container-historia {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    gap: 40px; /* Espaçamento entre a imagem e o texto */
+    height: 100vh;
+}
+
+/* Estilos do Bloco de Texto */
+.nossa-historia .conteudo-historia {
+    flex: 1.3; /* Ocupa o espaço disponível */
+    height: 100vh;
+}
+
+.nossa-historia .conteudo-historia h2 {
+    font-size: 3.1em;
+    color: var(--cor-principal, #333);
+    padding-bottom: 11rem;
+}
+
+.nossa-historia .conteudo-historia p {
+    font-size: 1.1em;
+    color: var(--cor-texto, #666);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Estilos da Imagem */
+.nossa-historia .imagem-historia {
+    flex: 1; /* Ocupa o espaço disponível */
+    height: 100vh;
+}
+
+.nossa-historia .imagem-historia img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .nossa-historia .container-historia {
+        flex-direction: column; /* Coloca os itens em coluna */
+        gap: 20px;
+    }
+}
+
+
+/* Estilos para avaliações */
 
 
 
@@ -545,7 +782,7 @@ a {
 .backdrop {
   margin-top: 1rem;
   position: absolute;
-  top: 310px;
+  top: 280px;
   left: 0;
   width: 100%;
   height: 200px;
@@ -570,7 +807,7 @@ a {
 
 .logo-no-footer {
 font-family: var(--fonte-titulos);
-  font-size: 10rem;
+  font-size: 11.5rem;
   color: var(--cor-principal);
 
 }
