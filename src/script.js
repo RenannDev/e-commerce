@@ -29,9 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-});
-// Seleciona os elementos do HTML
-const carouselSlides = document.querySelector('.carousel-slides');
+
+
+
+    // slide do banner
+    const carouselSlides = document.querySelector('.carousel-slides');
 const dots = document.querySelectorAll('.dot');
 const totalSlides = dots.length;
 
@@ -90,6 +92,101 @@ carouselContainer.addEventListener('mouseleave', startCarousel);
 
 // Inicia o carrossel ao carregar a página
 document.addEventListener('DOMContentLoaded', startCarousel);
+
+
+
+// FAQ
+
+
+
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const perguntas = document.querySelectorAll('.faq-item');
+    const respostasContainer = document.querySelector('.faq-central-resposta');
+    const respostasConteudo = document.getElementById('respostas-faq');
+
+    // Mapeia os dados das perguntas para as respostas
+    const respostasMap = {};
+    const divRespostas = respostasConteudo.querySelectorAll('div');
+    divRespostas.forEach(div => {
+        respostasMap[div.id] = div.innerHTML;
+    });
+
+    const isMobile = window.matchMedia('(max-width: 768px)');
+
+    // Função para ativar o modo Desktop
+    const ativarDesktop = () => {
+        perguntas.forEach(pergunta => {
+            pergunta.style.transform = 'none'; // Reseta o transform do mobile
+            
+            // Remove a resposta do mobile se existir
+            const respostaMobile = pergunta.querySelector('.faq-resposta-mobile');
+            if (respostaMobile) {
+                respostaMobile.remove();
+            }
+
+            pergunta.addEventListener('click', () => {
+                const respostaId = pergunta.dataset.resposta;
+                const respostaHTML = respostasMap[respostaId];
+                
+                respostasContainer.style.opacity = '0';
+                setTimeout(() => {
+                    respostasContainer.innerHTML = respostaHTML;
+                    respostasContainer.style.opacity = '1';
+                }, 300);
+            });
+        });
+    };
+
+    // Função para ativar o modo Mobile (Acordeão)
+    const ativarMobile = () => {
+        perguntas.forEach(pergunta => {
+            // Remove o listener de click do desktop
+            pergunta.removeEventListener('click', null); 
+            
+            pergunta.addEventListener('click', (e) => {
+                const respostaId = pergunta.dataset.resposta;
+                let respostaMobile = pergunta.querySelector('.faq-resposta-mobile');
+
+                // Se a resposta ainda não foi criada, cria e insere
+                if (!respostaMobile) {
+                    respostaMobile = document.createElement('div');
+                    respostaMobile.className = 'faq-resposta-mobile';
+                    respostaMobile.innerHTML = respostasMap[respostaId];
+                    pergunta.appendChild(respostaMobile);
+                }
+
+                // Fecha todas as outras respostas abertas
+                document.querySelectorAll('.faq-resposta-mobile.aberto').forEach(item => {
+                    if (item !== respostaMobile) {
+                        item.classList.remove('aberto');
+                    }
+                });
+                
+                // Alterna a classe 'aberto' para mostrar/esconder a resposta
+                respostaMobile.classList.toggle('aberto');
+            });
+        });
+    };
+
+    // Inicializa a lógica baseada no tamanho da tela
+    if (isMobile.matches) {
+        ativarMobile();
+    } else {
+        ativarDesktop();
+    }
+
+    // Listener para mudanças no tamanho da tela
+    isMobile.addEventListener('change', (e) => {
+        if (e.matches) {
+            ativarMobile();
+        } else {
+            ativarDesktop();
+        }
+    });
+});
+// Seleciona os elementos do HTML
 
 
 
