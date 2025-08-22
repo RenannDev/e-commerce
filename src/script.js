@@ -186,11 +186,53 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-// Seleciona os elementos do HTML
 
 
+// FORMULARIO
 
+ const form = document.querySelector('.contato-formulario form');
+    const statusDiv = document.getElementById('form-status');
 
+    // Adiciona um listener para o evento de envio do formulário
+    form.addEventListener('submit', async (event) => {
+        // Previne o comportamento padrão do navegador de recarregar a página
+        event.preventDefault();
 
-// scipt para a secao porque comprar
-// scipt para a secao porque comprar
+        // Limpa a mensagem de status anterior
+        statusDiv.textContent = 'Enviando...';
+        statusDiv.style.color = '#555';
+
+        // Cria um objeto FormData com os dados do formulário
+        const formData = new FormData(form);
+
+        try {
+            // Usa o método fetch para enviar os dados para o Formspree
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            // Verifica se a resposta da API foi bem-sucedida
+            if (response.ok) {
+                statusDiv.textContent = 'Mensagem enviada com sucesso!';
+                statusDiv.style.color = 'green';
+                form.reset(); // Limpa o formulário
+            } else {
+                // Se a resposta não for ok, lê a mensagem de erro
+                const data = await response.json();
+                if (Object.hasOwnProperty.call(data, 'errors')) {
+                    statusDiv.textContent = data.errors.map(error => error.message).join(", ");
+                } else {
+                    statusDiv.textContent = 'Ocorreu um erro ao enviar a mensagem.';
+                }
+                statusDiv.style.color = 'red';
+            }
+        } catch (error) {
+            // Em caso de erro de rede, mostra uma mensagem de erro
+            statusDiv.textContent = 'Ocorreu um erro ao enviar a mensagem.';
+            statusDiv.style.color = 'red';
+        }
+    });
