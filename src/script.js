@@ -66,7 +66,7 @@ function nextSlide() {
 
 // Inicia o carrossel automático (muda a cada 4 segundos)
 function startCarousel() {
-    slideInterval = setInterval(nextSlide, 4000); // 4000ms = 4 segundos
+    slideInterval = setInterval(nextSlide, 3000); // 4000ms = 4 segundos
 }
 
 // Para o carrossel quando o mouse está sobre ele

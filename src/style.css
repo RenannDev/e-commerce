@@ -89,15 +89,17 @@ h1 {
 .carousel-content {
   position: absolute;
   top: 50%;
-  left: 40%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: var(--cor-fundo);
-  width: 90%;
+  width: 100%;
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr;
   mix-blend-mode: difference;
+  
+
 }
 
 .carousel-content .carousel-title {
@@ -106,33 +108,38 @@ h1 {
   color: var(--cor-fundo);
 }
 
-.carrosel-subtitle {
-  width: 90%;
-  text-align: end;
-
+.carousel-content .carrosel-subtitle {
+  text-align: center;
 }
 
 .carousel-description {
-  font-family: var(--fonte-texto);
-  font-size: var(--subtitulo-h2);
-  color: var(--cor-fundo);
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2rem;
 }
 
 .carrosel-versiculo {
-  width: 90%;
-  text-align: end;
+  text-align: center;
+  font-family: var(--fonte-texto);
+  font-size: 1.1rem;
+  color: var(--cor-fundo);
+  font-style: italic;
+  position: relative;
 }
 
 .versiculo {
   font-family: var(--fonte-texto);
-  font-size: var(--texto-p);
-  color: var(--cor-fundo);
+  font-size: var(--texto-legendas);
+  color: white;
   font-style: italic;
-  margin-bottom: 0;
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-
+.capitulo{
+  font-size: var(--texto-legendas);
+}
 
 /* cabeçalho  */
 .menu {
